@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0B0B0D;
+  --surface: #111114;
+  --card: #17171B;
+  --card-hover: #1F1F24;
+  --gold: #FFD700;
+  --gold2: #C9A227;
+  --text: #F5F5F5;
+  --muted: #A1A1AA;
+  --line: #2A2A30;
+  --line-light: #3A3A42;
+  --ok: #22C55E;
+  --warn: #F59E0B;
+  --error: #EF4444;
+  --info: #3B82F6;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom subtle dark scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0B0B0D;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2A2A30;
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3E3E47;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #FFF176 0%, #FFD700 50%, #C9A227 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gold-border-glow {
+    border-color: rgba(255, 215, 0, 0.35);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+  }
+}
+
+/* Animations */
+@keyframes sweep {
+  0% { top: 4%; }
+  50% { top: 94%; }
+  100% { top: 4%; }
+}
+
+.animate-sweep {
+  animation: sweep 3.8s ease-in-out infinite;
+}

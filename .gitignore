@@ -1,0 +1,80 @@
+# ==============================================================================
+# SmartAttend — Professional Multi-Stack .gitignore
+# Next.js 15 + FastAPI Backend2 + ESP8266 IoT + AI Vision
+# ==============================================================================
+
+# ── 1. Environment Variables & Secrets ──
+.env
+.env.*
+!.env.example
+!.env.production.example
+backend/.env
+backend2/.env
+deployment/.env
+
+# ── 2. Node & Next.js Build Outputs ──
+node_modules/
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+next-env.d.ts.bak
+
+# ── 3. Python Virtual Environments & Caches ──
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+backend2/.pytest_cache/
+backend/.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+ENV/
+env/
+backend/venv/
+
+# ── 4. Log Files ──
+*.log
+logs/
+backend2/logs/*.log
+!backend2/logs/.gitkeep
+
+# ── 5. Databases & Local Persistence ──
+*.db
+*.sqlite
+*.sqlite3
+smartattend.db
+smartattend_test.db
+backend/smartattend.db
+backend2/smartattend.db
+
+# ── 6. Student Biometrics & Runtime Image Uploads ──
+backend/storage/student_images/*
+!backend/storage/student_images/.gitkeep
+backend2/uploads/classroom/*
+!backend2/uploads/classroom/.gitkeep
+backend2/uploads/students/*
+!backend2/uploads/students/.gitkeep
+scratch/
+
+# ── 7. Machine Learning Model Weights ──
+*.pt
+weights/*.pt
+backend/weights/*.pt
+backend/weights/*.onnx
+# Whitelist active SCRFD-10G ONNX model (16.14 MB is within GitHub 50/100 MB limits)
+!backend2/weights/scrfd_10g_bnkps.onnx
+
+# ── 8. Operating System & IDE Artifacts ──
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+*.bak
